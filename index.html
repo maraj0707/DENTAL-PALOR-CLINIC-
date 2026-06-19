@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dental Parlor & Implant Clinic — Dr. Awais Afridi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #0D1B2A;
+    --navy2:  #152638;
+    --gold:   #C9A84C;
+    --gold2:  #E8C97A;
+    --cream:  #F7F3ED;
+    --white:  #FFFFFF;
+    --muted:  #8A9BAB;
+    --border: rgba(201,168,76,0.18);
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 72px;
+    background: rgba(13,27,42,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 36px; height: 36px;
+  }
+  .nav-logo-text {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+  .nav-logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+  .nav-links {
+    display: flex; gap: 36px; list-style: none;
+  }
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    opacity: 0.75;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 22px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 400;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 5vw 80px 8vw;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-sub {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 40px;
+    line-height: 1.4;
+  }
+  .hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(247,243,237,0.6);
+    max-width: 420px;
+    margin-bottom: 52px;
+  }
+  .hero-actions {
+    display: flex; gap: 18px; align-items: center;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 36px;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+  .btn-ghost {
+    color: var(--cream);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.6;
+    display: flex; align-items: center; gap: 8px;
+    transition: opacity 0.2s;
+  }
+  .btn-ghost:hover { opacity: 1; }
+  .btn-ghost::after { content: '→'; font-size: 1rem; }
+
+  .hero-stats {
+    display: flex; gap: 40px;
+    margin-top: 52px;
+    padding-top: 36px;
+    border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--navy) 0%, transparent 30%),
+                linear-gradient(180deg, transparent 60%, var(--navy) 100%);
+    z-index: 1;
+  }
+  .hero-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55) saturate(0.7);
+    transition: transform 8s ease;
+  }
+  #hero:hover .hero-img { transform: scale(1.03); }
+
+  .hero-badge {
+    position: absolute;
+    bottom: 48px;
+    right: 48px;
+    z-index: 2;
+    width: 110px; height: 110px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(13,27,42,0.7);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    gap: 2px;
+  }
+  .badge-num {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .badge-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 100px 8vw; }
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px; height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-desc {
+    font-size: 0.88rem;
+    line-height: 1.9;
+    color: rgba(247,243,237,0.55);
+    max-width: 560px;
+    margin-bottom: 60px;
+  }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--navy2); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .service-card {
+    background: var(--navy2);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .service-card:hover { background: var(--navy); }
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 36px;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width 0.4s ease;
+  }
+  .service-card:hover::after { width: calc(100% - 72px); }
+  .service-num {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+    opacity: 0.7;
+  }
+  .service-icon {
+    width: 38px; height: 38px;
+    margin-bottom: 18px;
+    opacity: 0.85;
+  }
+  .service-name {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .service-desc {
+    font-size: 0.8rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* ─── GALLERY ─── */
+  #gallery { background: var(--navy); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 8px;
+  }
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+  }
+  .gallery-item:first-child {
+    grid-row: span 2;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65) saturate(0.7);
+    transition: transform 0.5s ease, filter 0.4s ease;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.8) saturate(0.85);
+  }
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .gallery-item:hover::after { border-color: var(--gold); }
+  .gallery-label {
+    position: absolute;
+    bottom: 18px; left: 18px;
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gallery-item:hover .gallery-label { opacity: 1; }
+
+  /* ─── DOCTOR ─── */
+  #doctor {
+    background: var(--navy2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 100px 8vw;
+  }
+  .doctor-img-wrap {
+    position: relative;
+  }
+  .doctor-img-wrap img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    filter: brightness(0.8) saturate(0.75);
+  }
+  .doctor-img-wrap::before {
+    content: '';
+    position: absolute;
+    top: -18px; left: -18px;
+    right: 18px; bottom: 18px;
+    border: 1px solid var(--gold);
+    z-index: -1;
+  }
+  .doctor-credentials {
+    display: flex; flex-direction: column; gap: 32px;
+  }
+  .doctor-name {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .doctor-name em { font-style: italic; color: var(--gold); }
+  .doctor-role {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    margin-top: -22px;
+  }
+  .doctor-bio {
+    font-size: 0.88rem;
+    line-height: 1.95;
+    color: rgba(247,243,237,0.6);
+  }
+  .doctor-tags {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .tag {
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: var(--font-mono);
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { background: var(--navy); }
+  .reviews-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .review-card {
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    position: relative;
+  }
+  .review-card::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.15;
+    position: absolute;
+    top: 10px; left: 24px;
+    line-height: 1;
+  }
+  .review-stars {
+    color: var(--gold);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+  .review-text {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-style: italic;
+    line-height: 1.75;
+    color: rgba(247,243,237,0.75);
+    margin-bottom: 22px;
+  }
+  .review-author {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+  .rating-bar {
+    margin-bottom: 60px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+  .rating-big {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .rating-info {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .rating-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 4px; }
+  .rating-count { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; }
+
+  /* ─── BOOKING ─── */
+  #booking { background: var(--navy2); }
+  .booking-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .booking-info { padding-top: 10px; }
+  .contact-list {
+    display: flex; flex-direction: column; gap: 22px;
+    margin-top: 40px;
+  }
+  .contact-item {
+    display: flex; gap: 18px; align-items: flex-start;
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+  .contact-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    margin-bottom: 4px;
+  }
+  .contact-value {
+    font-size: 0.88rem;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+
+  .booking-form {
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+  .form-input, .form-select, .form-textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--cream);
+    padding: 13px 16px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-select { appearance: none; cursor: pointer; }
+  .form-textarea { resize: vertical; min-height: 100px; }
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: var(--muted); opacity: 0.5; }
+  .form-select option { background: var(--navy); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid var(--border);
+    padding: 60px 8vw 36px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 52px;
+  }
+  .footer-brand-name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .footer-brand-desc {
+    font-size: 0.82rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 300px;
+    margin-bottom: 24px;
+  }
+  .footer-col-title {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: var(--font-mono);
+    margin-bottom: 22px;
+  }
+  .footer-links { display: flex; flex-direction: column; gap: 12px; }
+  .footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    font-size: 0.72rem;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  /* ─── DIVIDER ─── */
+  .gold-divider {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 60px;
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { height: 40vh; }
+    .hero-left { padding: 120px 6vw 60px; }
+    section { padding: 72px 6vw; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    .gallery-item:first-child { grid-row: span 1; }
+    #doctor { grid-template-columns: 1fr; padding: 72px 6vw; }
+    .reviews-strip { grid-template-columns: 1fr; }
+    .booking-wrap { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">
+    <svg class="nav-logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 4C12 4 8 9 8 14c0 3 1 5.5 2.5 8.5C12 26 13.5 32 15.5 32c1.5 0 2-2 2.5-4.5.5 2.5 1 4.5 2.5 4.5 2 0 3.5-6 5-9.5C27 19.5 28 17 28 14c0-5-4-10-10-10z" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+      <circle cx="18" cy="14" r="2.5" fill="#C9A84C" opacity="0.5"/>
+    </svg>
+    <div>
+      <div class="nav-logo-text">Dental Parlor</div>
+      <div class="nav-logo-sub">& Implant Clinic</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#doctor">Our Doctor</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#booking">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#booking">Book Appointment</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow reveal">Islamabad's Premier Dental Care</div>
+    <h1 class="hero-headline reveal">
+      A Smile<br>Crafted with<br><em>Precision</em>
+    </h1>
+    <p class="hero-sub reveal">Where artistry meets clinical excellence</p>
+    <p class="hero-desc reveal">
+      At Dental Parlor & Implant Clinic, we combine advanced implant techniques with a commitment to patient comfort — delivering lasting results in the heart of G-13, Islamabad.
+    </p>
+    <div class="hero-actions reveal">
+      <a class="btn-primary" href="#booking">Book a Consultation</a>
+      <a class="btn-ghost" href="#services">Explore Services</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div>
+        <div class="stat-num">4.9</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div>
+        <div class="stat-num">589+</div>
+        <div class="stat-label">Patient Reviews</div>
+      </div>
+      <div>
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Services Offered</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-img" src="./hero.png" alt="Dental Parlor Clinic Interior" onerror="this.style.background='linear-gradient(135deg,#152638,#0D1B2A)';this.style.display='block'">
+    <div class="hero-badge">
+      <div class="badge-num">★4.9</div>
+      <div class="badge-label">Google</div>
+      <div class="badge-label">Verified</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-eyebrow reveal">What We Offer</div>
+  <h2 class="section-title reveal">Complete <em>Dental</em><br>Solutions</h2>
+  <p class="section-desc reveal">From routine cleanings to full implant reconstructions, every procedure is performed with precision, care, and the most current techniques available.</p>
+
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <svg class="service-icon" viewBox="0 0 38 38" fill="none">
+        <path d="M19 6C14 6 10 11 10 16c0 2.5 1 4.5 2 7 1.5 3.5 3 8 5 8s2-2.5 2.5-5c.5 2.5 1 5 2.5 5 2 0 3.5-4.5 5-8 1-2.5 2-4.5 2-7 0-5-4-10-10-10z" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="service-name">Dental Implants</div>
+      <div class="service-desc">Permanent, natural-looking tooth replacement solutions anchored directly to the jawbone for lifelong stability.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <svg class="service-icon" viewBox="0 0 38 38" fill="none">
+        <rect x="8" y="14" width="22" height="16" rx="2" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <path d="M14 14V11a5 5 0 0110 0v3" stroke="#C9A84C" stroke-width="1.2"/>
+        <circle cx="19" cy="22" r="2.5" fill="#C9A84C" opacity="0.5"/>
+      </svg>
+      <div class="service-name">Root Canal (RCT)</div>
+      <div class="service-desc">Precision endodontic therapy to eliminate infection and preserve your natural tooth structure comfortably.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <svg class="service-icon" viewBox="0 0 38 38" fill="none">
+        <path d="M9 19c0-5.5 4.5-10 10-10s10 4.5 10 10" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <path d="M12 22c0 2 1.5 6 7 6s7-4 7-6" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <line x1="19" y1="9" x2="19" y2="7" stroke="#C9A84C" stroke-width="1.2"/>
+      </svg>
+      <div class="service-name">Teeth Whitening</div>
+      <div class="service-desc">Professional-grade bleaching and polishing for a brilliantly white, confident smile that lasts.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <svg class="service-icon" viewBox="0 0 38 38" fill="none">
+        <rect x="7" y="10" width="24" height="18" rx="3" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <path d="M13 19h12M19 13v12" stroke="#C9A84C" stroke-width="1.2"/>
+      </svg>
+      <div class="service-name">Dental Crowns</div>
+      <div class="service-desc">Custom-crafted porcelain and zirconia crowns that restore full function and seamlessly match your natural teeth.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <svg class="service-icon" viewBox="0 0 38 38" fill="none">
+        <path d="M8 26L19 8l11 18H8z" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <path d="M14 22l5-9 5 9" stroke="#C9A84C" stroke-width="1.1" fill="none"/>
+      </svg>
+      <div class="service-name">Braces & Aligners</div>
+      <div class="service-desc">Orthodontic correction using modern braces to straighten teeth and achieve a perfectly aligned smile.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <svg class="service-icon" viewBox="0 0 38 38" fill="none">
+        <circle cx="19" cy="19" r="11" stroke="#C9A84C" stroke-width="1.2" fill="none"/>
+        <path d="M14 19l3.5 3.5L24 14" stroke="#C9A84C" stroke-width="1.3"/>
+      </svg>
+      <div class="service-name">Veneers</div>
+      <div class="service-desc">Ultra-thin porcelain shells bonded to the front surface of teeth, transforming shape, color and overall smile aesthetics.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-eyebrow reveal">Inside Our Clinic</div>
+  <h2 class="section-title reveal">A Space Designed<br>for Your <em>Comfort</em></h2>
+  <p class="section-desc reveal">Modern equipment, sterile environments, and a calming atmosphere — our clinic was designed with your experience in mind, from reception to recovery.</p>
+
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="./hero.png" alt="Treatment Room" onerror="this.style.background='linear-gradient(135deg,#152638 60%,#1a3050)'">
+      <div class="gallery-label">Treatment Room</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./reception.png" alt="Reception" onerror="this.style.background='linear-gradient(135deg,#1a2a3a,#152638)'">
+      <div class="gallery-label">Reception</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./coridor.png" alt="Clinic Corridor" onerror="this.style.background='linear-gradient(135deg,#0d1b2a,#1a2a3a)'">
+      <div class="gallery-label">Corridor</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./dental chair (1).png" alt="Dental Chair" onerror="this.style.background='linear-gradient(135deg,#152638,#0d1b2a)'">
+      <div class="gallery-label">Dental Chair</div>
+    </div>
+    <div class="gallery-item">
+      <img src="./hero.png" alt="Equipment" onerror="this.style.background='linear-gradient(135deg,#1a3050,#152638)'">
+      <div class="gallery-label">Equipment</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section id="doctor">
+  <div class="doctor-img-wrap reveal">
+    <img src="./doctor omage.png" alt="Dr. Awais Afridi" onerror="this.style.background='linear-gradient(160deg,#152638,#0d1b2a)';this.style.minHeight='420px'">
+  </div>
+  <div class="doctor-credentials">
+    <div class="section-eyebrow reveal">Meet Your Doctor</div>
+    <h2 class="doctor-name reveal">Dr. Awais<br><em>Afridi</em></h2>
+    <p class="doctor-role reveal">BDS · Dental Surgeon</p>
+    <p class="doctor-bio reveal">
+      Dr. Awais Afridi is a highly experienced dental surgeon specializing in implantology and cosmetic dentistry. With a commitment to staying at the forefront of dental technology, he provides treatments that balance clinical precision with genuine patient care.<br><br>
+      His approach is consultative and patient-centred — ensuring every individual leaves with not only a healthier smile, but the confidence that comes with it.
+    </p>
+    <div class="doctor-tags reveal">
+      <span class="tag">Implantology</span>
+      <span class="tag">Cosmetic Dentistry</span>
+      <span class="tag">Orthodontics</span>
+      <span class="tag">Endodontics</span>
+      <span class="tag">Prosthodontics</span>
+    </div>
+    <a class="btn-primary reveal" href="#booking" style="align-self:flex-start;margin-top:8px;">Book with Dr. Afridi</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-eyebrow reveal">Patient Reviews</div>
+  <h2 class="section-title reveal">What Our Patients<br><em>Say</em></h2>
+
+  <div class="rating-bar reveal">
+    <div class="rating-big">4.9</div>
+    <div class="rating-info">
+      <div class="rating-stars">★★★★★</div>
+      <div class="rating-count">Based on 589 Google Reviews</div>
+    </div>
+  </div>
+
+  <div class="reviews-strip reveal">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Absolutely the best dental experience I've had. Dr. Afridi is incredibly skilled and makes you feel completely at ease. My implant looks and feels completely natural.</p>
+      <div class="review-author">— Ahmed K. · Google Review</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">I was terrified of dentists but the team here changed that completely. Professional, gentle, and the clinic itself is spotless and modern. Highly recommend.</p>
+      <div class="review-author">— Sana M. · Google Review</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Got veneers done here and the results are stunning. Dr. Afridi took so much time to understand exactly what I wanted. Worth every rupee.</p>
+      <div class="review-author">— Bilal R. · Google Review</div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING / CONTACT -->
+<section id="booking">
+  <div class="booking-wrap">
+    <div class="booking-info">
+      <div class="section-eyebrow reveal">Get in Touch</div>
+      <h2 class="section-title reveal">Book Your<br><em>Appointment</em></h2>
+      <p class="section-desc reveal" style="margin-bottom:0">Reach out through any channel below or fill in the form and we'll confirm your slot within the same day.</p>
+
+      <div class="contact-list reveal">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone / WhatsApp</div>
+            <div class="contact-value">0332 8880891</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Street 169, G-13/3<br>Islamabad, 44000</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Clinic Hours</div>
+            <div class="contact-value">Open Daily · Closes 7:00 PM</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📘</div>
+          <div>
+            <div class="contact-label">Facebook Appointments</div>
+            <div class="contact-value"><a href="https://fb.com/book/DentalParlor/" style="color:var(--gold);text-decoration:none;">fb.com/book/DentalParlor</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input class="form-input" type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input class="form-input" type="tel" placeholder="+92 300 0000000">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Preferred Date</label>
+          <input class="form-input" type="date">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Preferred Time</label>
+          <input class="form-input" type="time">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service Required</label>
+        <select class="form-select">
+          <option value="">Select a service</option>
+          <option>Dental Implant</option>
+          <option>Root Canal (RCT)</option>
+          <option>Teeth Whitening / Bleaching</option>
+          <option>Dental Crown</option>
+          <option>Braces</option>
+          <option>Veneers</option>
+          <option>Scaling & Polishing</option>
+          <option>Tooth Extraction</option>
+          <option>Dental X-Ray</option>
+          <option>Dentures</option>
+          <option>General Checkup</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Additional Notes</label>
+        <textarea class="form-textarea" placeholder="Describe your concern or any relevant details…"></textarea>
+      </div>
+      <button class="btn-primary" style="align-self:flex-start;cursor:pointer;border:none;" onclick="handleBooking()">Confirm Appointment</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">Dental Parlor &<br>Implant Clinic</div>
+      <p class="footer-brand-desc">Advanced dental care in Islamabad, combining clinical expertise with a patient-first philosophy. Your smile is our signature.</p>
+      <div style="font-size:0.7rem;color:var(--gold);letter-spacing:0.2em;font-family:var(--font-mono);">★ 4.9 · 589 Google Reviews</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <div class="footer-links">
+        <a href="#services">Dental Implants</a>
+        <a href="#services">Root Canal</a>
+        <a href="#services">Braces</a>
+        <a href="#services">Veneers</a>
+        <a href="#services">Teeth Whitening</a>
+        <a href="#services">Crowns</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Clinic</div>
+      <div class="footer-links">
+        <a href="#doctor">Dr. Awais Afridi</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Patient Reviews</a>
+        <a href="#booking">Book Appointment</a>
+        <a href="tel:03328880891">0332 8880891</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Dental Parlor & Implant Clinic, Islamabad</span>
+    <span>Street 169, G-13/3, Islamabad 44000</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+
+  // Nav scroll effect
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.background = window.scrollY > 50
+      ? 'rgba(13,27,42,0.98)'
+      : 'rgba(13,27,42,0.85)';
+  });
+
+  // Booking handler
+  function handleBooking() {
+    const btn = event.target;
+    btn.textContent = '✓ Request Sent';
+    btn.style.background = '#2d5a3d';
+    btn.style.color = '#fff';
+    setTimeout(() => {
+      btn.textContent = 'Confirm Appointment';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
